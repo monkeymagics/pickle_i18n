@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["akimatter"]
-  s.date = %q{2011-05-20}
+  s.date = %q{2011-05-25}
   s.description = %q{pickle_i18n support pickle internationalization}
   s.email = %q{akm2000@gmail.com}
   s.extra_rdoc_files = [

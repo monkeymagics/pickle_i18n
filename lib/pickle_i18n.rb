@@ -21,7 +21,7 @@ module PickleI18n
       # モデルの日本語名についてもfactoryを設定します
       # pickle_config.factories['商品'] = pickle_config.factories['product']
 
-      [:activemodel, :activerecord].each do |scope|
+      [:activemodel, :activerecord, :mongoid].each do |scope|
         begin
           models_hash = I18n.config.backend.translate(locale, :models, :scope => scope)
           model_translations.update(models_hash.stringify_keys.invert)

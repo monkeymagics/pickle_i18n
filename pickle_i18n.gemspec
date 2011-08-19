@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pickle_i18n}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["akimatter"]
-  s.date = %q{2011-05-25}
+  s.authors = [%q{akimatter}]
+  s.date = %q{2011-08-19}
   s.description = %q{pickle_i18n support pickle internationalization}
   s.email = %q{akm2000@gmail.com}
   s.extra_rdoc_files = [
@@ -33,9 +33,9 @@ Gem::Specification.new do |s|
     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/akm/pickle_i18n}
-  s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
+  s.licenses = [%q{MIT}]
+  s.require_paths = [%q{lib}]
+  s.rubygems_version = %q{1.8.6}
   s.summary = %q{pickle_i18n support pickle internationalization}
 
   if s.respond_to? :specification_version then

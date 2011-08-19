@@ -22,16 +22,18 @@ module PickleI18n
       # pickle_config.factories['商品'] = pickle_config.factories['product']
 
       [:activemodel, :activerecord, :mongoid].each do |scope|
-        begin
-          models_hash = I18n.config.backend.translate(locale, :models, :scope => scope)
-          model_translations.update(models_hash.stringify_keys.invert)
+        catch(:exception) do
+          begin
+            models_hash = I18n.config.backend.translate(locale, :models, :scope => scope)
+            model_translations.update(models_hash.stringify_keys.invert)
 
-          model_to_attr_hash = I18n.config.backend.translate(locale, :attributes, :scope => scope)
-          model_to_attr_hash.each do |model_name, attr_hash|
-            model_attribute_translations[model_name.to_s] = attr_hash.stringify_keys.invert
+            model_to_attr_hash = I18n.config.backend.translate(locale, :attributes, :scope => scope)
+            model_to_attr_hash.each do |model_name, attr_hash|
+              model_attribute_translations[model_name.to_s] = attr_hash.stringify_keys.invert
+            end
+          rescue I18n::MissingTranslationData
+            # 翻訳が見つからない場合はスルーします
           end
-        rescue I18n::MissingTranslationData
-          # 翻訳が見つからない場合はスルーします
         end
       end
 
